@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: test-render-hosting
+    env: docker
+    repo: https://github.com/Sabrey1/TestRender.git
+    branch: main
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value: false
+      - key: APP_DEBUG
+        value:......

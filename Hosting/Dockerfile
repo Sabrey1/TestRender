@@ -2,16 +2,12 @@ FROM richarvey/nginx-php-fpm:1.7.2
 
 COPY . .
 
-ENV SKIP_COMPOSER 1
-ENV WEBROOT /var/www/html/public
-ENV PHP_ERRORS_STDERR 1
-ENV RUN_SCRIPTS 1
-ENV REAL_IP_HEADER 1
+COPY .env.example .env
 
-ENV APP_ENV production
-ENV APP_DEBUG false
-ENV LOG_CHANNEL stderr
+RUN composer install --no-dev --optimize-autoloader
 
-ENV COMPOSER_ALLOW_SUPERUSER 1
+RUN chmod -R 775 storage bootstrap/cache
 
-CMD ["/start.sh"]
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
